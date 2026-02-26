@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Value Types in JS</title>
+</head>
+<body>
+    <script>
+        // JS Data Value Types
+        // Primitive - immutable single value data type in js
+        // String, Number, Boolean, Undefined, Null, BigInt and Symbol
+
+        // String
+        var myName="Vikas Singh"
+        console.log(myName);
+        // number
+        var myMob=9678768686;
+        console.log(myName + " mobile number is " + myMob);
+        // Boolean
+        var isMarried=false;
+        console.log(myName + " is married ? " + isMarried);
+        // Undefined
+        var myEmail;
+        console.log(myEmail);
+        console.log(typeof(myEmail));
+        // null
+        var myAddress=null;
+        console.log(myAddress);
+        console.log(typeof(myAddress));
+        // Bigint
+        var myNum=BigInt(9797893454354353544646);
+        console.log(myNum);
+        console.log(typeof(myNum));
+        // Symbol
+        var var1=Symbol("Vikas");
+        var var2=Symbol("Vikas");
+        console.log(var1==var2);
+
+        // Reference Type(Object)--mutable in memory and keep the data in key value pair
+
+        // object {}, function (), array []
+        let myInfo={
+             name:"Megha", 
+             age:23, 
+             isMarried:false, 
+             address:"Delhi-21", 
+             branch:"CSE", 
+             section:23
+        };
+        console.log(myInfo);
+        console.log(myInfo.name + "  and her age is " + myInfo.age);
+
+        // object length
+        var keys=Object.keys(myInfo);
+        console.log(keys.length);
+
+        //function - block of code to perform particuler task
+
+        function cal(){
+            var num1=45;
+            var num2=40;
+            var add=num1+num2;
+            console.log("Addition of two numbers is " + add);
+        }
+        cal();
+
+        // array - collection of any data tpyes
+        let studentList=["stu1", "stu2", "stu3", "stu4"];
+        console.log(studentList[0]);
+        // for diffrenct data types
+        let stu1=["Vikas", 23, false, "GZB", "CSE", null, 18];
+        console.log(stu1);
+        console.log(stu1.length);
+
+        // to iterate array member
+        for(let i=0; i<stu1.length;i++){
+            console.log(stu1[i]);
+        }
+        for(let x in stu1){
+            console.log("updated way " + stu1[x]);
+        }
+
+
+
+    </script>
+    
+</body>
+</html>
