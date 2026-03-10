@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //JavaScript provides several types of loops to repeatedly execute a block of code until a specific condition is met.
+
+        //types of loops
+        let studentList=[ ["Sanvi",23],
+            "Vinay", 
+            "Vikas", 
+            "Sahil", 
+            "Megha", 
+            "Zeeshan", 
+            "Rahul", 
+            23,
+            23,
+            34,
+            35,
+            35,
+            36];
+        //for loop
+        for(let i=0;i<=studentList.length;i++){
+            // console.log(studentList[0][1]);
+            console.log(studentList[3]);
+        }
+        // while....... Executes a block of code as long as a specified condition is true. It is useful when the number of iterations is uncertain.
+        let i=0;
+        while(i<=studentList.length){
+            console.log(studentList[5]);
+            i++;
+        }
+        //for..in:- for...in loop: Iterates over the enumerable properties (keys) of an object.
+        // see an example from object
+
+        // for....of:- Iterates over the values of iterable objects such as arrays, strings, Maps, and Sets.
+        for(let x of studentList){
+            console.log(x);
+        }
+
+    </script>
+</body>
+</html>
