@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in JS</title>
+</head>
+<body>
+    <script>
+ // Function:- block of code , used or defined to perform specific task
+ //Types of Function
+ // normal  fuction : - with para, without para and with default
+
+ // normal function without parameters..
+
+ function demo(){
+   console.log("Hello JS");
+ }
+ demo(); // function calling
+
+ // with parameters
+
+ function demo1(text){
+    console.log("Hello " + text);
+ }
+ demo1("React");
+ // defualt parameters
+
+ function add(a,b=10){
+    console.log("Addtion is " + (a+b));
+ }
+ add(123);
+
+ //Synchronous (sync) operations run sequentially, blocking further execution until a task completes, providing immediate consistency. Asynchronous (async) operations run concurrently or non-blockingly, allowing other tasks to proceed while waiting for a response, boosting efficiency and scalability in I/O-heavy applications
+
+ //Synchronous
+ function cal(){
+    function add(a,b){
+  console.log(a+b);
+    }
+    function mul(x,y){
+        console.log(x*y);
+    }
+    function sub(p,r){
+        console.log(p-r);
+    }
+    mul(3,6);
+    sub(9,6);
+    add(3,6)
+ }
+ cal();
+
+ //Anonymous Function:- An anonymous function in JavaScript is a function without a name or identifier. They are primarily defined using function expressions or the concise arrow function syntax and are generally used for short, one-time tasks
+
+
+ let msg=function(){
+    console.log("Hello ABES");
+    // console.log(typeof(msg));
+ }
+ msg();
+ // short code for above funtion i.e. arrow function 
+ let msg1=()=>console.log("Hello ABESSSSS EC");
+ msg1();
+ // arrow function using muliple lines
+
+ let msg2=(a,b)=>{
+    var num1=a;
+    var num2=b;
+    var res=num1/num2;
+    console.log("Result is " + res);
+ }
+ msg2(10,20);
+
+ //IIFE:- An IIFE (Immediately Invoked Function Expression) is a JavaScript function that runs as soon as it is defined.
+ (function(){
+    console.log("Hello World!");
+ })();
+ // short code for aobve funtion
+ (msg=>console.log("hello"))();
+
+ // Promises: - Promises handle asynchronous operations, preventing "callback hell" and providing the foundation for async/await.
+/* States: Promises exist in one of three states:
+Pending: Operation is still running.
+Fulfilled: Operation completed successfully.
+Rejected: Operation failed.
+Once settled, a promise's state is immutable.  */
+
+let myPromoise=new Promise(function(resolve,reject){
+   let age=25;
+   if(age>=18){
+      resolve("valid age");
+   }
+   else{
+      reject("wait for next year");
+   }
+});
+myPromoise
+.then(msg=>console.log(msg))
+.catch(error=>console.log(error));
+console.log(myPromoise);
+
+//async and await are modern JavaScript keywords (introduced in ES2017) that provide a cleaner, more readable way to work with Promises by allowing asynchronous code to be written in a synchronous-like style. 
+
+//api....https://dummyjson.com/products
+
+async function userInfo(){
+   try{
+let userData=await fetch('https://dummyjson.com/products');
+let response=await userData.json();
+console.log(response);
+} //try end
+catch(error){
+   console.log(error);
+} //catch end
+} //function end
+userInfo();
+
+//Higher Order Function:- Higher-order functions help make your code more reusable and modular by allowing you to work with functions like any other value.
+//map filter reduce foreach
+// JavaScript provides several built-in array methods that are higher-order 
+
+/* map(): Creates a new array by applying a function to each element.
+filter(): Creates a new array with elements that pass a test function.
+reduce(): Reduces an array to a single value using a callback function.
+forEach(): Executes a function for each array element. */
+
+let  num=[4,6,7,8,9,3,2,1];
+
+//map
+let square=num.map(n=>n*n);
+console.log(square);
+//reduce
+let sum=num.reduce((total,n)=>total+n);
+console.log(sum);
+//filter
+let sorting=num.filter(n=>n>2);
+console.log(sorting);
+//forEach
+num.forEach(n=>console.log(n*2));
+
+//Local storage:-JavaScript localStorage is a feature that allows web applications to store key-value pairs persistently within the user's browser, with no expiration date. 
+let myInfo={
+name:'John',
+age:45,
+mob:95675676,
+eMail:"john23@gmail.com"
+};
+// Store the object by converting it to a JSON string
+localStorage.setItem('myInfo', JSON.stringify(myInfo));
+
+// Retrieve and parse the JSON string back into an object
+let storeData=JSON.parse(localStorage.getItem('myInfo'));
+console.log(storeData.name);
+
+    </script>
+</body>
+</html>
